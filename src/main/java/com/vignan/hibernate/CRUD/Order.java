@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
 
 
@@ -23,6 +24,9 @@ public class Order {
         this.customerName = name;
     }
 
+    @Column(name = "total_price")
+    private double totalPrice; 
+
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItems = new ArrayList<>();
@@ -30,10 +34,12 @@ public class Order {
     public void addOrderItem(OrderItem orderItem) {
         orderItems.add(orderItem);
         orderItem.setOrder(this);
+        this.totalPrice += orderItem.getPrice();
     }
     public void removeOrderItem(OrderItem orderItem) {
         orderItems.remove(orderItem);
         orderItem.setOrder(null);
+        this.totalPrice -= orderItem.getPrice();
     }
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
@@ -47,6 +53,12 @@ public class Order {
     }
     public String getCustomerName() {
         return customerName;
+    }
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+    public void printdata(){
+        System.out.println( "Order ID: " + this.getId() + ", Customer name: " + this.getCustomerName());
     }
 
 

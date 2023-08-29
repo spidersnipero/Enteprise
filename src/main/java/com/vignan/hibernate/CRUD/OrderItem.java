@@ -48,6 +48,10 @@ public class OrderItem {
     public double getPrice() {
         return price;
     }
+
+    public void   printdata(){
+        System.out.println( "Order Item ID: " + this.getId() + ", Product name: " + this.getProductName() + ", Price: " + this.getPrice());
+    }
     
 
 
