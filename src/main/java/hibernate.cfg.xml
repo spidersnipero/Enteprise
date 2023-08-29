@@ -11,7 +11,6 @@
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
-		<mapping class="com.vignan.hibernate.CRUD.Student"></mapping>
 		<mapping class="com.vignan.hibernate.CRUD.Order"></mapping>
         <mapping class="com.vignan.hibernate.CRUD.OrderItem"></mapping>
 	</session-factory>

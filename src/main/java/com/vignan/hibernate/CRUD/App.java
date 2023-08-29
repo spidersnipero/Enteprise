@@ -16,35 +16,6 @@ public class App {
 		try (Session session = factory.openSession()) {
             Scanner scanner = new Scanner(System.in);
             Transaction transaction = session.beginTransaction();
-            {
-              
-            }
-            { 
-
-            // Create an order
-            // Order order = new Order("java");
-            
-            // // Create and add order items
-            // OrderItem item1 = new OrderItem();
-            // item1.setProductName("Product 1");
-            // item1.setPrice(100.0);
-            // order.addOrderItem(item1);
-
-            // OrderItem item2 = new OrderItem();
-            // item2.setProductName("Product 2");
-            // item2.setPrice(150.0);
-            // order.addOrderItem(item2);
-
-            // // Save the order (including order items)
-			// session.persist(order);
-            // OrderItem item3 = new OrderItem();
-            // item3.setProductName("Product 3");
-            // item3.setPrice(120.0);
-            // order.addOrderItem(item3);
-            // session.persist(order);
-
-            // transaction.commit();
-            }
             System.out.println("Choose an option:");
             System.out.println("1. Create order");
             System.out.println("2. Add order item");
